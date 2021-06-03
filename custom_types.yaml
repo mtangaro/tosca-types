@@ -856,6 +856,24 @@ node_types:
             galaxy_flavor: { get_property: [ SELF, flavor ] }
             get_refdata: { get_property: [ SELF, reference_data ] }
 
+  tosca.nodes.indigo.RStudioPortal:
+    derived_from: tosca.nodes.WebServer
+    metadata:
+      icon: /images/rstudio.png
+    requirements:
+      - lrms:
+          capability: tosca.capabilities.indigo.LRMS
+          node: tosca.nodes.indigo.LRMS.FrontEnd
+          relationship: tosca.relationships.HostedOn
+    artifacts:
+      rstudio_role:
+        file: laniakea.rstudio
+        type: tosca.artifacts.AnsibleGalaxy.role
+    interfaces:
+      Standard:
+        configure:
+          implementation: https://raw.githubusercontent.com/mtangaro/tosca-types/laniakea-galaxy/artifacts/rstudio/rstudio_install.yml
+
   tosca.nodes.indigo.TeskAPI:
     derived_from: tosca.nodes.WebServer
     properties:
