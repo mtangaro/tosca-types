@@ -451,11 +451,17 @@ node_types:
       nfs_role:
         file: indigo-dc.nfs,master
         type: tosca.artifacts.AnsibleGalaxy.role
+      docker_role:
+        file: indigo-dc.docker
+        type: tosca.artifacts.AnsibleGalaxy.role
       laniakea_galaxy_role:
         file: laniakea.galaxy
         type: tosca.artifacts.AnsibleGalaxy.role
       galaxy_role:
         file: galaxyproject.galaxy,0.9.6
+        type: tosca.artifacts.AnsibleGalaxy.role
+      galaxy_ie_role:
+        file: laniakea.galaxy_ie
         type: tosca.artifacts.AnsibleGalaxy.role
       nginx_role:
         file: galaxyproject.nginx,0.6.4
