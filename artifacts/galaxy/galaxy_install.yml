@@ -7,9 +7,6 @@
     - set_fact:
         galaxy_flavor: 'galaxy-no-tools'
       when: galaxy_flavor == 'galaxy-minimal'
-    - name: '[EL] Install python 3'
-      raw: 'yum install -y python3'
-      when: ansible_os_family == 'RedHat'
   roles:
     - role: laniakea.galaxy
       GALAXY_ADMIN_EMAIL: "{{ galaxy_admin }}"
