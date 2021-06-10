@@ -7,6 +7,9 @@
     - set_fact:
         galaxy_flavor: 'galaxy-no-tools'
       when: galaxy_flavor == 'galaxy-minimal'
+    - name: 'Install python 3'
+      package:
+        name: ['python3']
   roles:
     - role: laniakea.galaxy
       GALAXY_ADMIN_EMAIL: "{{ galaxy_admin }}"
