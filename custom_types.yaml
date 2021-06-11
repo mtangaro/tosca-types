@@ -452,7 +452,7 @@ node_types:
         file: indigo-dc.nfs,master
         type: tosca.artifacts.AnsibleGalaxy.role
       docker_role:
-        file: indigo-dc.docker
+        file: indigo-dc.docker,v2.1.2
         type: tosca.artifacts.AnsibleGalaxy.role
       laniakea_galaxy_role:
         file: laniakea.galaxy
