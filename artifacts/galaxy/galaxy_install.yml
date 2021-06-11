@@ -10,7 +10,7 @@
   roles:
     #- role: indigo-dc.docker
     #  docker_config:  { "data-root": "{{ export_dir }}/docker_image", }
-    - role: laniakea.galaxy
+    - role: mtangaro.galaxy
       GALAXY_ADMIN_EMAIL: "{{ galaxy_admin }}"
       GALAXY_ADMIN_API_KEY: "{{ galaxy_admin_api_key }}"
     - role: indigo-dc.nfs
