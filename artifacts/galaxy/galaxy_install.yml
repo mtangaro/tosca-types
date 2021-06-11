@@ -3,20 +3,17 @@
   connection: local
   vars:
      vnode_prefix: vnode-
-#  pre_tasks:
-#    - set_fact:
-#        galaxy_flavor: 'galaxy-no-tools'
-#      when: galaxy_flavor == 'galaxy-minimal'
-#    - name: '[EL] Install python 3'
-#      raw: 'yum install -y python3'
-#      when: ansible_os_family == 'RedHat'
+  pre_tasks:
+    - set_fact:
+        galaxy_flavor: 'galaxy-no-tools'
+      when: galaxy_flavor == 'galaxy-minimal'
   roles:
-     - role: indigo-dc.docker
-       docker_config:  { "data-root": "{{ export_dir }}/docker_image", }
-#    - role: laniakea.galaxy
-#      GALAXY_ADMIN_EMAIL: "{{ galaxy_admin }}"
-#      GALAXY_ADMIN_API_KEY: "{{ galaxy_admin_api_key }}"
-#    - role: indigo-dc.nfs
-#      nfs_mode: 'server'
-#      nfs_exports: [{path: "{{export_dir}}", export: "{{ vnode_prefix }}*.localdomain(rw,async,no_root_squash,no_subtree_check,insecure)"}]
-#      when: galaxy_lrms != "local"
+    #- role: indigo-dc.docker
+    #  docker_config:  { "data-root": "{{ export_dir }}/docker_image", }
+    - role: laniakea.galaxy
+      GALAXY_ADMIN_EMAIL: "{{ galaxy_admin }}"
+      GALAXY_ADMIN_API_KEY: "{{ galaxy_admin_api_key }}"
+    - role: indigo-dc.nfs
+      nfs_mode: 'server'
+      nfs_exports: [{path: "{{export_dir}}", export: "{{ vnode_prefix }}*.localdomain(rw,async,no_root_squash,no_subtree_check,insecure)"}]
+      when: galaxy_lrms != "local"
