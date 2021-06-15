@@ -442,6 +442,10 @@ node_types:
         type: string
         description: galaxy instance description
         default: "INDIGO Galaxy test"
+      enable_galaxy_ie:
+        type: boolean
+        description: Enable Galaxy Interactive Environments (install docker)
+        default: false
     requirements:
       - lrms:
           capability: tosca.capabilities.indigo.LRMS
@@ -497,6 +501,7 @@ node_types:
             galaxy_version: { get_property: [ SELF, version ] }
             galaxy_instance_description: { get_property: [ SELF, instance_description ] }
             export_dir: { get_property: [ SELF, export_dir ] }
+            enable_galaxy_ie: { get_property: [SELF, enable_galaxy_ie] }
 
   tosca.nodes.indigo.GalaxyPortalAndStorage:
     derived_from: tosca.nodes.indigo.GalaxyPortal
