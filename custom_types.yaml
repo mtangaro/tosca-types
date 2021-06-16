@@ -789,8 +789,6 @@ node_types:
 
   tosca.nodes.indigo.RStudioPortal:
     derived_from: tosca.nodes.WebServer
-    metadata:
-      icon: /images/rstudio.png
     requirements:
       - lrms:
           capability: tosca.capabilities.indigo.LRMS
