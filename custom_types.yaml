@@ -887,8 +887,8 @@ node_types:
 
   tosca.nodes.indigo.LaniakeaUtils:
     derived_from: tosca.nodes.SoftwareComponent
-    metadata:
-      icon: /images/laniakea.png
+    #metadata:
+    #  icon: /images/laniakea.png
     properties:
       install_docker:
         type: boolean
