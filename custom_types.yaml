@@ -1,4 +1,4 @@
-tosca_definitions_version: tosca_simple_yaml_1_0
+efinitions_version: tosca_simple_yaml_1_0
 
 metadata:
   template_author: INDIGO/DEEP
@@ -884,6 +884,35 @@ node_types:
       Standard:
         configure:
           implementation: https://raw.githubusercontent.com/mtangaro/tosca-types/laniakea-galaxy/artifacts/rstudio/rstudio_install.yml
+
+  tosca.nodes.indigo.LaniakeaUtils:
+    derived_from: tosca.nodes.SoftwareComponent
+    metadata:
+      icon: /images/laniakea.png
+    properties:
+      install_docker:
+        type: boolean
+        description: Install Docker
+        default: false
+        required: false
+      install_conda:
+        type: boolean
+        description: Install Conda
+        default: false
+        required: false
+    requirements:
+      - host:
+          capability: tosca.capabilities.Container
+          node: tosca.nodes.Compute
+          relationship: tosca.relationships.HostedOn
+    artifacts:
+      utils_role:
+        file: laniakea.utils
+        type: tosca.artifacts.AnsibleGalaxy.role
+    interfaces:
+      Standard:
+        configure:
+          implementation: https://raw.githubusercontent.com/mtangaro/tosca-types/laniakea-galaxy/artifacts/laniakea/laniakea_utils.yml
 
   tosca.nodes.indigo.TeskAPI:
     derived_from: tosca.nodes.WebServer

@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+     vnode_prefix: vnode-
+  roles:
+    - role: laniakea.utils
