@@ -900,11 +900,6 @@ node_types:
         description: Install Conda
         default: false
         required: false
-    requirements:
-      - host:
-          capability: tosca.capabilities.Container
-          node: tosca.nodes.Compute
-          relationship: tosca.relationships.HostedOn
     artifacts:
       utils_role:
         file: laniakea.utils
