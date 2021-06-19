@@ -907,7 +907,7 @@ node_types:
       docker_role:
         file: indigo-dc.docker,v2.1.2
         type: tosca.artifacts.AnsibleGalaxy.role
-      utils_role:
+      conda_role:
         file: uchida.miniconda,master
         type: tosca.artifacts.AnsibleGalaxy.role
     interfaces:
