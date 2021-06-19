@@ -914,6 +914,9 @@ node_types:
       Standard:
         configure:
           implementation: https://raw.githubusercontent.com/mtangaro/tosca-types/laniakea-galaxy/artifacts/laniakea/utils_install.yml
+          inputs:
+            install_docker: { get_property: [ SELF, install_docker ] }
+            install_conda: { get_property: [ SELF, install_conda ] }
 
   tosca.nodes.indigo.TeskAPI:
     derived_from: tosca.nodes.WebServer
