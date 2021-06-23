@@ -789,6 +789,11 @@ node_types:
 
   tosca.nodes.indigo.RStudioPortal:
     derived_from: tosca.nodes.WebServer
+    properties:
+      instance_key_pub:
+        type: string
+        description: instance ssh public key
+        default: your_ssh_public_key
     requirements:
       - lrms:
           capability: tosca.capabilities.indigo.LRMS
