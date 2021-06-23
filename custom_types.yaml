@@ -800,6 +800,9 @@ node_types:
           node: tosca.nodes.indigo.LRMS.FrontEnd
           relationship: tosca.relationships.HostedOn
     artifacts:
+      os_users_role:
+        file: indigo-dc.os_users
+        type: tosca.artifacts.AnsibleGalaxy.role
       rstudio_role:
         file: laniakea.rstudio
         type: tosca.artifacts.AnsibleGalaxy.role
