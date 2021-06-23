@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+     vnode_prefix: vnode-
+  roles:
+    - role: indigo-dc.os_users
+      os_users: [ {os_user_name: 'studio', os_user_guid: '4001', os_user_add_to_sudoers: True, os_user_ssh_public_key: '{{ instance_key_pub }}'} ]
+    - role: laniakea.rstudio
