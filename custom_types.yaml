@@ -810,6 +810,8 @@ node_types:
       Standard:
         configure:
           implementation: https://raw.githubusercontent.com/mtangaro/tosca-types/v3.0.1/artifacts/rstudio/rstudio_install.yml
+          inputs:
+            instance_key_pub:  { get_property: [ SELF, instance_key_pub ] }
 
   tosca.nodes.indigo.TeskAPI:
     derived_from: tosca.nodes.WebServer
