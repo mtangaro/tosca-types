@@ -796,7 +796,7 @@ node_types:
         default: your_ssh_public_key
       install_Seu:
         type: boolean
-        description: Install Reference data
+        description: Install Seurat
         default: false
     requirements:
       - lrms:
