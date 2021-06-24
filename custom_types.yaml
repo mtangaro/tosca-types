@@ -794,6 +794,10 @@ node_types:
         type: string
         description: instance ssh public key
         default: your_ssh_public_key
+      install_Seu:
+        type: boolean
+        description: Install Reference data
+        default: false
     requirements:
       - lrms:
           capability: tosca.capabilities.indigo.LRMS
@@ -812,6 +816,7 @@ node_types:
           implementation: https://raw.githubusercontent.com/mtangaro/tosca-types/v3.0.1/artifacts/rstudio/rstudio_install.yml
           inputs:
             instance_key_pub:  { get_property: [ SELF, instance_key_pub ] }
+            install_Seu:  { get_property: [ SELF, install_Seu ] }
 
   tosca.nodes.indigo.TeskAPI:
     derived_from: tosca.nodes.WebServer
